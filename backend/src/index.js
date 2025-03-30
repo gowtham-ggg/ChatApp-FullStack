@@ -20,11 +20,11 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:5173",
-    "https://connectify-connectseveryone.netlify.app",
-    credentials: true,
+    origin: ["http://localhost:5173", "https://connectify-connectseveryone.netlify.app"], // ✅ Corrected
+    credentials: true, 
   })
 );
+
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
